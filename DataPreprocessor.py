@@ -16,7 +16,7 @@ from keras.layers import Dense #Connect the layers
 from keras.preprocessing.image import ImageDataGenerator #For image Augmentation
 from keras.preprocessing import image
 from keras.models import model_from_json #To save the model 
-
+#%%Creation of Functions
 def pathsplit(Path):#This Function splits the path string to makes the path in the window label visible 
     PathSplit = Path.split('/')
     PathSplit = PathSplit[0] + '/' + PathSplit[1] + '/' + PathSplit[2] + '/' + '...' + '/' + PathSplit[-2] +'/'+ PathSplit[-1]
@@ -70,7 +70,7 @@ def OKAY():
             shutil.move(os.path.join(directory_list[directory], file), os.path.join(path1, 'TrainingSet', str(dirs[directory])))
     window.destroy()
 
-#User Interface Development
+#%%User Interface Development
 window = tk.Tk()
 window.geometry('850x330')
 logo = tk.PhotoImage(file="UI/Logo_True.png")
@@ -89,7 +89,7 @@ v.set('Please Select the working directory...')
 button3 = tk.Button(window, image=Folder, command = filesearch2).place(x=750, y=190)
 button4 = tk.Button(window, image=OK, command = OKAY).place(x=670, y=250)
 window.mainloop()
-
+#%%
 def Training():
     os.system('python MyCode.py')
 
@@ -106,7 +106,7 @@ def Testing():
 def close():
     window3.destroy()
     
-# Creating Interface to Test model
+#%% Creating Interface to Test model
 window3 = tk.Tk()
 window3.geometry('850x330')
 logo = tk.PhotoImage(file="UI/Logo_True.png")
@@ -123,7 +123,7 @@ v.set('Please Select the working directory...')
 button3 = tk.Button(window3, image=Folder, command = Testing).place(x=750, y=190)
 button4 = tk.Button(window3, image=OK, command = close).place(x=635, y=250)
 window3.mainloop()
-
+#%%
     
     
     
