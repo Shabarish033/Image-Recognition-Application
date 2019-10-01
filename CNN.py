@@ -5,7 +5,7 @@ Created on Fri Sep 13 09:44:56 2019
 @author: shabarish
 """
 #My CNN
-#Importing Libraries
+#%%Importing Libraries
 import os
 import numpy as np
 from keras.models import Sequential # Initialize the Neural Network
@@ -16,7 +16,7 @@ from keras.layers import Dense #Connect the layers
 from keras.preprocessing.image import ImageDataGenerator #For image Augmentation
 from keras.preprocessing import image
 from keras.models import model_from_json #To save the model 
-#Data is already preprocessed, image files are stored in respective paths
+#%%Data is already preprocessed, image files are stored in respective paths
 #Extracting Data
 TrainingSetPath =  os.environ['TrainingSetPath']
 TrainingSetPath = str(TrainingSetPath)
@@ -24,12 +24,12 @@ TestSetPath =  os.environ['TestSetPath']
 TestSetPath = str(TestSetPath)
 path1 = os.environ['path1']
 path1 = str(path1)
-#Initialize the CNN
+#%%Initialize the CNN
 classifier = Sequential()
 #First Convolution and MaxPooling Layer
 classifier.add(Convolution2D(32, 3, 3, input_shape=(64, 64, 3), activation='relu')) #Added Convolution Layer
 classifier.add(MaxPooling2D(pool_size=(2, 2))) #Added Max Pooling Layer
-#Second Convolution and MaxPooling Layer
+#%%Second Convolution and MaxPooling Layer
 classifier.add(Convolution2D(32, 3, 3, activation='relu')) #Added Convolution Layer
 classifier.add(MaxPooling2D(pool_size=(2, 2))) #Added Max Pooling Layer
 classifier.add(Flatten())#converting image matrices to vectors
@@ -37,7 +37,7 @@ classifier.add(Dense(output_dim=128, activation='relu')) #Full Connection
 classifier.add(Dense(output_dim=1, activation='sigmoid')) #Output Layer
 classifier.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
 
-#Fitting CNN
+#%%Fitting CNN
 ImageModificationsTrainingSet = ImageDataGenerator(
         rescale=1./255,
         shear_range=0.2,
