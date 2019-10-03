@@ -65,43 +65,4 @@ classifier.fit_generator(
         validation_data=TestSet,
         validation_steps=2000)
 
-#TestImage = image.load_img('dataset/single_prediction/4.jpg', target_size=(64, 64))
-#TestImage = image.img_to_array(TestImage) #Converts Image to 3d Array
-#TestImage = np.expand_dims(TestImage, axis = 0) #converts to 4d Array
-#result = classifier.predict(TestImage)
-#
-#TestImage2 = image.load_img('dataset/single_prediction/8.jpg', target_size=(64, 64))
-#TestImage2 = image.img_to_array(TestImage2) #Converts Image to 3d Array
-#TestImage2 = np.expand_dims(TestImage2, axis = 0) #converts to 4d Array
-#result2 = classifier.predict(TestImage2)
-#
-#TrainingSet.class_indices
-#if result2[0][0] ==1:
-#    prediction = 'dog'
-#else:
-#    prediction = 'cat'
-#
-#Store the Model 
-#model_json = classifier.to_json(os.path.join(path1 + 'CNN.json'))
-#with open("CNN.json", "w") as json_file:
-#    json_file.write(model_json)
-## serialize weights to HDF5
-#classifier.save_weights("CNN.h5")
-#print("Saved model to disk")    
-#
-##Load the File
-#json_file = open('CNN.json', 'r')
-#loaded_model_json = json_file.read()
-#json_file.close()
-#loaded_model = model_from_json(loaded_model_json)
-## load weights into new model
-#loaded_model.load_weights("CNN.h5")
-#print("Loaded model from disk")
-#
-##Test Loaded Model
-#
-#loaded_model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
-#TestImage3 = image.load_img('dataset/single_prediction/cat_or_dog_2.jpg', target_size=(64, 64))
-#TestImage3 = image.img_to_array(TestImage3) #Converts Image to 3d Array
-#TestImage3 = np.expand_dims(TestImage3, axis = 0) #converts to 4d Array
-#result3 = loaded_model.predict(TestImage3)
+
